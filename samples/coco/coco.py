@@ -473,6 +473,8 @@ if __name__ == '__main__':
     print("Loading weights ", model_path)
     model.load_weights(model_path, by_name=True)
 
+    model.compile(config.LEARNING_RATE, config.LEARNING_MOMENTUM)
+
     # Train or evaluate
     if args.command == "train":
         # Training dataset. Use the training set and 35K from the
